@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clase 48</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 48</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 </head>
+
 <body>
-  
-  <button id="nuevo">Nuevo juego</button>
-<button id="reiniciar">Reiniciar juego</button>
-<div class="grilla" id="grilla"></div>
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+    <!--  🍌🍒🍍 O V E R L A Y  I N I C I O 🍌🍒🍍 -->
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+    <div class="overlay">
 
-<!-- <button id="buscarMatch">Buscar matches</button> -->
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+    <!--   🍌🍒🍍 MODAL INICIO DE JUEGO 🍌🍒🍍 -->
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+        <div class="modal-inicio">
 
-  <script src="index.js"></script>
+            <div class="texto-modal">
+            <h1 class="titulo-modal">Nuevo juego</h1>
+            <p>Escoge una dificultad</p>
+            </div>
+
+            <footer class="dificultades-btn">
+                <button id="facil">Fácil</button>
+                <button id="normal">Normal</button>
+                <button id="dificil">Difícil</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+    <!--   🍌🍒🍍 H E A D E R  J U E G O 🍌🍒🍍 -->
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+    <header class="header-juego">
+        <button id="nuevo">
+            <i class="fas fa-undo-alt"></i>
+        </button>
+
+        <button id="reiniciar">Reiniciar juego</button>
+    </header>
+
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+    <!--   🍌🍒🍍 G R I L L A   J U E G O 🍌🍒🍍 -->
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+    <div class="grilla" id="grilla"></div>
+
+
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+    <!--   🍌🍒🍍 B U S C A R   M A T C H 🍌🍒🍍 -->
+    <!-- 🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍🍌🍒🍍 -->
+    <button id="buscar-match">
+        <i class="fas fa-search"></i>
+    </button>
+
+    <script src="index.js"></script> 
 </body>
+
 </html>

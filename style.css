@@ -1,11 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,500&display=swap');
+
+/* 🍌🍒🍍 ESTILOS GENERALES 🍌🍒🍍 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Patrick Hand', cursive;
+
+}
+/* 🍌🍒🍍 MODAL INICIO 🍌🍒🍍 */
+
+.modal-inicio {
+    z-index: 2;
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 30px;
+    max-width: 500px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.dificultades-btn {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dificultades-btn button {
+    margin-top: 0;
+    margin-left: 20px;
+    max-width: 200px;
+}
+
+.texto-modal {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+/* 🍌🍒🍍 JUEGO 🍌🍒🍍 */
+
 .grilla {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  .grilla > div {
+.grilla > div {
     width: 50px;
     height: 50px;
     border: 1px solid black;
@@ -13,5 +57,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
+}
+
+/* 🍌🍒🍍 OVERLAY MODAL 🍌🍒🍍 */
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+}
+
+/* 🍌🍒🍍 CLASES ESPECIALES 🍌🍒🍍 */
+
+.hidden {
+    display: none;
+}

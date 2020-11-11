@@ -1,7 +1,7 @@
 const grillaHTML = document.querySelector("#grilla");
 const nuevoJuego = document.querySelector("#nuevo");
 const reiniciarJuego = document.querySelector("#reiniciar");
-const buscarMatches = document.querySelector("#buscarMatch")
+const buscarMatches = document.querySelector("#buscar-match")
 
 const frutas =  ['🍉', '🥥', '🍋', '🥝', '🍒', '🍑']
 let dificultad = ''
@@ -53,7 +53,6 @@ const comenzarJuego = dificultad => {
   }
 }
 
-
 const pedirDificultad = () => {
   const pedirDificultad = prompt("Escoge una dificultad: facil, normal, dificil")
   dificultad = pedirDificultad
@@ -61,35 +60,27 @@ const pedirDificultad = () => {
 }
 
 reiniciarJuego.onclick = () => {
-  comenzarJuego(dificultad)
+    comenzarJuego(dificultad)
 }
 
 nuevoJuego.onclick = () => {
-  pedirDificultad()
+    pedirDificultad()
 }
 
-// buscarMatches.onclick = () => {
-//   console.log(grilla)
+buscarMatches.onclick = () => {
+    let matches = [];
 
+    for (let i = 0; i < grilla.length; i++) {
+        for (let j = 0; j < grilla[i].length; j++) {
 
-//   let matches = [];
-
-//   for (let i = 0; i < grilla.length; i++) {
-//     for (let j = 0; j < grilla[i].length; j++) {
-      
-
-//       if (grilla[i][j] === grilla[i][j + 1] && grilla[i][j + 1] === grilla[i][ j + 2]) {
-//         // console.log(grilla[i][j], grilla[i][j + 1], grilla[i][j + 2])
-//         matches.push(grilla[i][j], grilla[i][j + 1], grilla[i][j + 2])
-//       }
-      
-//     }
+            if (grilla[i][j] === grilla[i][j + 1] && grilla[i][j + 1] === grilla[i][ j + 2]) {
+                matches.push(grilla[i][j], grilla[i][j + 1], grilla[i][j + 2])
+            }
+        }
     
-//   }
-//   console.log(matches)
-// }
+    }
+  console.log(matches)
+}
 
-
-
-  alert("Bienvenidx!")
-  pedirDificultad()
+alert("Bienvenidx!")
+pedirDificultad()
