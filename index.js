@@ -1,8 +1,8 @@
 const grillaHTML = document.querySelector("#grilla");
 const nuevoJuego = document.querySelector("#nuevo");
-const reiniciarJuego = document.querySelector("#reiniciar");
 const buscarMatches = document.querySelector("#buscar-match")
 
+// ELEMENTOS 
 const frutas =  ['🍉', '🥥', '🍋', '🥝', '🍒', '🍑']
 let dificultad = ''
 let grilla = []
@@ -38,33 +38,35 @@ const crearGrilla = (ancho) => {
   }
 }
 
-const comenzarJuego = dificultad => {
-  if (dificultad === "facil") {
-    crearGrilla(10)
-  }
-  else if (dificultad === "normal") {
+// MODAL - NUEVO JUEGO - ESCOGER DIFICULTAD
+const modalInicio = document.querySelector('.modal-inicio')
+const overlayInicio = document.querySelector('.overlay')
+
+const btnFacil = document.getElementById('facil')
+const btnNormal = document.getElementById('normal')
+const btnDificil = document.getElementById('dificil')
+
+btnFacil.onclick = () => {
+    modalInicio.classList.add('hidden')
+    overlayInicio.classList.add('hidden')
     crearGrilla(8)
-  }
-  else if (dificultad === "dificil") {
+}
+
+btnNormal.onclick = () => {
+    modalInicio.classList.add('hidden')
+    overlayInicio.classList.add('hidden')
+    crearGrilla(10)
+}
+
+btnDificil.onclick = () => {
+    modalInicio.classList.add('hidden')
+    overlayInicio.classList.add('hidden')
     crearGrilla(6)
-  }
-  else {
-    alert("No ingresaste una opcion valida :(")
-  }
-}
-
-const pedirDificultad = () => {
-  const pedirDificultad = prompt("Escoge una dificultad: facil, normal, dificil")
-  dificultad = pedirDificultad
-  comenzarJuego(dificultad)
-}
-
-reiniciarJuego.onclick = () => {
-    comenzarJuego(dificultad)
 }
 
 nuevoJuego.onclick = () => {
-    pedirDificultad()
+    overlayInicio.classList.remove('hidden')
+    modalInicio.classList.remove('hidden')
 }
 
 buscarMatches.onclick = () => {
@@ -81,6 +83,3 @@ buscarMatches.onclick = () => {
     }
   console.log(matches)
 }
-
-alert("Bienvenidx!")
-pedirDificultad()

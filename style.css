@@ -21,6 +21,7 @@ body {
     padding: 40px 30px;
     max-width: 500px;
     font-family: 'Ubuntu', sans-serif;
+    border-radius: 5px;
 }
 
 .dificultades-btn {
