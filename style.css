@@ -81,3 +81,11 @@ body {
 .hidden {
     display: none;
 }
+
+.match-horizontal {
+    background-color: #7ac8ec;
+}
+
+.match-vertical {
+    background-color: #b371f1;
+}
