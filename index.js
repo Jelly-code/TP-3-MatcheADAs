@@ -73,9 +73,14 @@ nuevoJuego.onclick = () => {
 const cuadradoGrilla = document.querySelector('.cuadrado')
 
 buscarMatches.onclick = () => {
+
+
+
+
     let matches = [];
 
     for (let i = 0; i < grilla.length; i++) {
+<<<<<<< HEAD
 
         for (let j = 0; j < grilla[i].length; j++) {
         // HORIZONTALES
@@ -104,12 +109,43 @@ buscarMatches.onclick = () => {
         }
         return colorearMatches()
     }
+=======
+
+        for (let j = 0; j < grilla[i].length; j++) {
+
+          // HORIZONTALES
+            if (grilla[i][j] === grilla[i][j + 1] && grilla[i][j + 1] === grilla[i][j + 2]) {
+                matches.push(grilla[i][j], grilla[i][j + 1], grilla[i][j + 2])
+              }  
+// VERTICALES estamos guardando posicion
+        if (grilla[i + 1] && grilla[i + 2] && grilla[i][j] === grilla[i + 1][j] && grilla[i + 1][j] === grilla[i + 2][j]) {
+          console.log("verticales", i, j, grilla[i][j])
+            matches.push([i, j])
+            matches.push([i + 1, j])
+            matches.push([i + 2, j])
+        }
+
+ 
+        }
+    }
+
+>>>>>>> cdbb685dc042054016bcca72dc4b7d4014d544fc
       // como seleccionar en html un elemento
 
       // recorrer el array matches 
       // y por cada elemento del array matches, seleccionarlo y pintarlo asi: 
+<<<<<<< HEAD
 //   const divCualquiera = document.querySelector(`div[data-x="1"][data-y="2"]`)
 //   divCualquiera.style.backgroundColor = "yellow"
 
+=======
+  const divCualquiera = document.querySelector(`div[data-x="1"][data-y="2"]`)
+  divCualquiera.style.backgroundColor = "yellow"
+
+  
+
+
+  console.log(matches)
+>>>>>>> cdbb685dc042054016bcca72dc4b7d4014d544fc
 }
 
