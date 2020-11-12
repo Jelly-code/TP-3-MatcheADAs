@@ -33,7 +33,7 @@ const crearGrilla = (ancho) => {
   grillaHTML.innerHTML = ''
   for (let i = 0; i < listaDeFrutas.length; i++) {
     for (let j = 0; j < listaDeFrutas[i].length; j++) {
-      grillaHTML.innerHTML += `<div class="cuadrado" data-x="${i}" data-y="${j}">${listaDeFrutas[i][j]}</div>`
+      grillaHTML.innerHTML += `<div data-x="${i}" data-y="${j}">${listaDeFrutas[i][j]}</div>`
     }
   }
 }
@@ -70,46 +70,35 @@ nuevoJuego.onclick = () => {
 }
 
 // MATCHES
-const cuadradoGrilla = document.querySelector('.cuadrado')
+let matches = []
 
 buscarMatches.onclick = () => {
-    let matches = [];
-    for (let i = 0; i < grilla.length; i++) {
+  matches = []
+  for (let i = 0; i < grilla.length; i++) {
 
-        for (let j = 0; j < grilla[i].length; j++) {
-        // HORIZONTALES
-            if (grilla[i][j] === grilla[i][j + 1] && grilla[i][j + 1] === grilla[i][j + 2]) {
-                matches.push(grilla[i][j])
-                matches.push(grilla[i][j + 1])
-                matches.push(grilla[i][j + 2])
-            }  
+    for (let j = 0; j < grilla[i].length; j++) {
+    // HORIZONTALES
+      if (grilla[i][j] === grilla[i][j + 1] && grilla[i][j + 1] === grilla[i][j + 2]) {
+        const divHorizontal = document.querySelector(`div[data-x = '${i}'][data-y = '${j}']`)
+        const divHorizontalUno = document.querySelector(`div[data-x = '${i}'][data-y = '${j + 1}']`)
+        const divHorizontalDos = document.querySelector(`div[data-x = '${i}'][data-y = '${j + 2}']`)
+                
+        divHorizontal.style.backgroundColor = '#7ac8ec'
+        divHorizontalUno.style.backgroundColor = '#7ac8ec'
+        divHorizontalDos.style.backgroundColor = '#7ac8ec'
+      }  
 
-        // VERTICALES 
-            if (grilla[i + 1] && grilla[i + 2] && grilla[i][j] === grilla[i + 1][j] && grilla[i + 1][j] === grilla[i + 2][j]) {
-            matches.push([i, j])
-            matches.push([i + 1, j])
-            matches.push([i + 2, j])
-            }
-        }
+      // VERTICALES 
+      if (grilla[i + 1] && grilla[i + 2] && grilla[i][j] === grilla[i + 1][j] && grilla[i + 1][j] === grilla[i + 2][j]) {
+        const divVertical = document.querySelector(`div[data-x = '${i}'][data-y = '${j}']`)
+        const divVerticalUno = document.querySelector(`div[data-x = '${i + 1}'][data-y = '${j}']`)
+        const divVerticalDos = document.querySelector(`div[data-x = '${i + 2}'][data-y = '${j}']`)
+                
+        divVertical.style.backgroundColor = '#b371f1'
+        divVerticalUno.style.backgroundColor = '#b371f1'
+        divVerticalDos.style.backgroundColor = '#b371f1'
+      }
     }
-    console.log(matches)
-  
-      // como seleccionar en html un elemento
-
-      // recorrer el array matches 
-      // y por cada elemento del array matches, seleccionarlo y pintarlo asi: 
-//   const divCualquiera = document.querySelector(`div[data-x="1"][data-y="2"]`)
-//   divCualquiera.style.backgroundColor = "yellow"
-  const colorearMatches = () => {
-    for (let i = 0; i < matches.length; i++) {
-        cuadradoGrilla.style.backgroundColor = "green"
-
-        for (let j = 0; j < grilla[i].length; j++) {
-            cuadradoGrilla.style.backgroundColor = "yellow"
-        }
-    }
-    return colorearMatches()
-  }
-
+  }  
 }
 
